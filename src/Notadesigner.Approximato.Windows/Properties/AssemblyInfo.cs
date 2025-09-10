@@ -16,13 +16,13 @@ using System.Runtime.Versioning;
 // The following GUID is for the ID of the typelib if this project is exposed to COM.
 
 [assembly: Guid("15D06A35-6722-4A2E-9D78-CF5A97BA10F6")]
-[assembly: AssemblyTitle("Approximato – Time Manager for Windows")]
-[assembly: AssemblyVersion("1.4.3.0")]
-[assembly: AssemblyInformationalVersion("1.4.3.0")]
+[assembly: AssemblyTitle("Cadence – Time Manager for Windows")]
+[assembly: AssemblyVersion("2.0.0.0")]
+[assembly: AssemblyInformationalVersion("2.0.0.0")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("notadesigner.com")]
-[assembly: AssemblyProduct("Approximato – Time Manager")]
+[assembly: AssemblyProduct("Cadence – Time Manager")]
 [assembly: AssemblyCopyright("Copyright © Pranav Negandhi")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
