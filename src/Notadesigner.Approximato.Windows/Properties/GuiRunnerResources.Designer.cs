@@ -153,7 +153,7 @@ namespace Notadesigner.Approximato.Windows.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Approximato.
+        ///   Looks up a localized string similar to Cadence.
         /// </summary>
         internal static string ProductName {
             get {

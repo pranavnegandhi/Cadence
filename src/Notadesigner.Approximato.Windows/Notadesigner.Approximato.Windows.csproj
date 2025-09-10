@@ -11,7 +11,7 @@
   <PropertyGroup>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <RootNamespace>Notadesigner.Approximato.Windows</RootNamespace>
-    <AssemblyName>Approximato.Windows</AssemblyName>
+    <AssemblyName>Cadence.Windows</AssemblyName>
     <ApplicationIcon>Resources\MainIcon.ico</ApplicationIcon>
   </PropertyGroup>
 
