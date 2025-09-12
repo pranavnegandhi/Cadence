@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\state-machine-diagram.puml = ..\state-machine-diagram.puml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notadesigner.Cadence.Windows", "Notadesigner.Cadence.Windows\Notadesigner.Cadence.Windows.csproj", "{6DC01FFE-118E-4D87-8F24-806D678CA77F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,10 @@ Global
 		{01D90114-D372-443C-B5C4-71161C8E4AF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01D90114-D372-443C-B5C4-71161C8E4AF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01D90114-D372-443C-B5C4-71161C8E4AF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DC01FFE-118E-4D87-8F24-806D678CA77F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DC01FFE-118E-4D87-8F24-806D678CA77F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DC01FFE-118E-4D87-8F24-806D678CA77F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DC01FFE-118E-4D87-8F24-806D678CA77F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

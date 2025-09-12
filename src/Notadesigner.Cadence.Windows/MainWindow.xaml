@@ -5,8 +5,61 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Notadesigner.Cadence.Windows"
         mc:Ignorable="d"
-        ResizeMode="NoResize"
-        Title="{Binding Path=Title}" Height="140" Width="252">
-    <Grid>
-    </Grid>
+        WindowState="Minimized"
+        ShowInTaskbar="True"
+        ResizeMode="CanMinimize"
+        WindowStyle="ThreeDBorderWindow"
+        Left="0"
+        Top="0"
+        Title="{Binding Path=Title}" Height="143" Width="280">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Icons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.TaskbarItemInfo>
+        <TaskbarItemInfo ProgressState="Normal" ProgressValue="{Binding Path=TimeElapsed}">
+            <TaskbarItemInfo.ThumbButtonInfos>
+                <ThumbButtonInfoCollection>
+                    <ThumbButtonInfo ImageSource="{StaticResource Start}" Description="Start" />
+                </ThumbButtonInfoCollection>
+            </TaskbarItemInfo.ThumbButtonInfos>
+        </TaskbarItemInfo>
+    </Window.TaskbarItemInfo>
+    <DockPanel>
+
+        <StatusBar DockPanel.Dock="Bottom" Height="Auto">
+            <StatusBarItem VerticalContentAlignment="Bottom">
+                <TextBlock Height="0.5cm" Text="{Binding Path=FocusCounter, StringFormat='Round {0} of 3'}"></TextBlock>
+            </StatusBarItem>
+        </StatusBar>
+
+        <StackPanel Margin="0.2cm 0.2cm"
+                    Orientation="Horizontal">
+            <TextBlock FontSize="0.8cm"
+                       Margin="0.2cm 0cm"
+                       TextAlignment="Left"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center">
+                <TextBlock.Text>
+                    <Binding Path="ElapsedDuration" StringFormat="{}{0:hh\:mm\:ss}" />
+                </TextBlock.Text>
+            </TextBlock>
+            <StackPanel Orientation="Vertical"
+                        VerticalAlignment="Center"
+                        Margin="0.2cm 0">
+                <TextBlock Text="{Binding Path=StartedAt, StringFormat='Start: {0:hh\\:mm tt}'}"
+                           TextAlignment="Left"
+                           Margin="0 0.1cm"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left" />
+                <TextBlock Text="{Binding Path=FinishedAt, StringFormat='Finish: {0:hh\\:mm tt}'}"
+                           TextAlignment="Left"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left" />
+            </StackPanel>
+        </StackPanel>
+    </DockPanel>
 </Window>
