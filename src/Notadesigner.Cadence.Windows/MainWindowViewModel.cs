@@ -1,5 +1,6 @@
 ﻿using Notadesigner.Cadence.Windows.Properties;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace Notadesigner.Cadence.Windows;
 
@@ -11,7 +12,23 @@ public class MainWindowViewModel : INotifyPropertyChanged
 
     public double TimeElapsed { get; set; } = 0.5;
 
-    public int FocusCounter { get; set; } = 3;
+    private int _focusCounter;
+
+    public int FocusCounter
+    {
+        get => _focusCounter;
+
+        set
+        {
+            if (_focusCounter == value)
+            {
+                return;
+            }
+
+            _focusCounter = value;
+            OnPropertyChanged();
+        }
+    }
 
     public TimeSpan ElapsedDuration { get; set; } = TimeSpan.FromMinutes(32);
 
@@ -20,4 +37,14 @@ public class MainWindowViewModel : INotifyPropertyChanged
     public DateTime StartedAt { get; set; } = DateTime.UtcNow;
 
     public DateTime FinishedAt { get; set; } = DateTime.UtcNow.AddMinutes(32);
+
+    private void OnPropertyChanged([CallerMemberName] string? propertyName = null)
+    {
+        if (propertyName is null)
+        {
+            return;
+        }
+
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
 }
