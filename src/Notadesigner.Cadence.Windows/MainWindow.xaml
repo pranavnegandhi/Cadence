@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Notadesigner.Cadence.Windows"
         mc:Ignorable="d"
-        WindowState="Minimized"
+        WindowState="Normal"
         ShowInTaskbar="True"
         ResizeMode="CanMinimize"
         WindowStyle="ThreeDBorderWindow"
