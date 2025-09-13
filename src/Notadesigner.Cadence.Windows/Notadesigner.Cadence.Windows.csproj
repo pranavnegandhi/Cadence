@@ -33,7 +33,7 @@
 		<PackageReference Include="Serilog.Sinks.File" Version="6.0.0">
 			<TreatAsUsed>true</TreatAsUsed>
 		</PackageReference>
-		<PackageReference Include="Wpf.Extensions.Hosting" Version="1.2.0" />
+		<PackageReference Include="Dapplo.Microsoft.Extensions.Hosting.Wpf" Version="1.0.14" />
 	</ItemGroup>
 
 	<ItemGroup>

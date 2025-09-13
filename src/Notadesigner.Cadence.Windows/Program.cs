@@ -1,4 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Dapplo.Microsoft.Extensions.Hosting.Wpf;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Notadesigner.Approximato.Core;
 using Notadesigner.Approximato.Data;
 using Notadesigner.Approximato.Messaging.ServiceRegistration;
@@ -27,15 +31,20 @@ internal static class Program
             /// Attempt to initialize the service
             Log.Information("Starting Cadence");
 
-            var builder = WpfApplication<App, MainWindow>.CreateBuilder(args);
-            builder.Host
+            var host = new HostBuilder()
                 .ConfigureServices(ConfigureServicesDelegate)
-                .UseSerilog();
+                .ConfigureWpf(builder =>
+                {
+                    builder.UseApplication<App>();
+                    builder.UseWindow<MainWindow>();
+                })
+                .UseWpfLifetime()
+                .UseSerilog()
+                .Build();
 
-            var app = builder.Build();
-            await app.Services.StartConsumers();
+            await host.Services.StartConsumers();
 
-            await app.RunAsync();
+            await host.RunAsync();
         }
         catch (ApplicationException exception)
         {
