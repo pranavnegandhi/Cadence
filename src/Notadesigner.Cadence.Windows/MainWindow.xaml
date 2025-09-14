@@ -24,6 +24,11 @@
             <TaskbarItemInfo.ThumbButtonInfos>
                 <ThumbButtonInfoCollection>
                     <ThumbButtonInfo ImageSource="{StaticResource Start}" Description="Start" />
+                    <ThumbButtonInfo ImageSource="{StaticResource Interrupt}" Description="Interrupt" />
+                    <ThumbButtonInfo ImageSource="{StaticResource Resume}" Description="Resume" />
+                    <ThumbButtonInfo ImageSource="{StaticResource Abandon}" Description="Abandon" />
+                    <ThumbButtonInfo ImageSource="{StaticResource Reset}" Description="Reset" />
+                    <ThumbButtonInfo ImageSource="{StaticResource Exit}" Description="Exit" />
                 </ThumbButtonInfoCollection>
             </TaskbarItemInfo.ThumbButtonInfos>
         </TaskbarItemInfo>
