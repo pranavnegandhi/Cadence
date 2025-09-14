@@ -8,11 +8,19 @@ public class MainWindowViewModel : INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler? PropertyChanged;
 
-    public string Title { get; init; } = GuiRunnerResources.ProductName;
-
-    public double TimeElapsed { get; set; } = 0.5;
-
     private int _focusCounter;
+
+    private TimeSpan _elapsedDuration;
+
+    private TimeSpan _totalDuration;
+
+    private double _timeElapsed;
+
+    private DateTime _startedAt;
+
+    private DateTime _finishedAt;
+
+    public string Title { get; init; } = GuiRunnerResources.ProductName;
 
     public int FocusCounter
     {
@@ -30,13 +38,85 @@ public class MainWindowViewModel : INotifyPropertyChanged
         }
     }
 
-    public TimeSpan ElapsedDuration { get; set; } = TimeSpan.FromMinutes(32);
+    public TimeSpan ElapsedDuration
+    {
+        get => _elapsedDuration;
 
-    public TimeSpan TotalDuration { get; set; } = TimeSpan.FromMinutes(30);
+        set
+        {
+            if (_elapsedDuration == value)
+            {
+                return;
+            }
 
-    public DateTime StartedAt { get; set; } = DateTime.UtcNow;
+            _elapsedDuration = value;
+            OnPropertyChanged();
+            OnPropertyChanged(nameof(TimeElapsed));
+        }
+    }
 
-    public DateTime FinishedAt { get; set; } = DateTime.UtcNow.AddMinutes(32);
+    public double TimeElapsed
+    {
+        get
+        {
+            var ratio = 100.0 * _elapsedDuration / _totalDuration;
+            if (double.IsNaN(ratio))
+            {
+                ratio = 0.0;
+            }
+
+            return ratio;
+        }
+    }
+
+    public TimeSpan TotalDuration
+    {
+        get => _totalDuration;
+
+        set
+        {
+            if (_totalDuration == value)
+            {
+                return;
+            }
+
+            _totalDuration = value;
+            OnPropertyChanged();
+            OnPropertyChanged(nameof(TimeElapsed));
+        }
+    }
+
+    public DateTime StartedAt
+    {
+        get => _startedAt;
+
+        set
+        {
+            if (_startedAt == value)
+            {
+                return;
+            }
+
+            _startedAt = value;
+            OnPropertyChanged();
+        }
+    }
+
+    public DateTime FinishedAt
+    {
+        get => _finishedAt;
+
+        set
+        {
+            if (_finishedAt == value)
+            {
+                return;
+            }
+
+            _finishedAt = value;
+            OnPropertyChanged();
+        }
+    }
 
     private void OnPropertyChanged([CallerMemberName] string? propertyName = null)
     {

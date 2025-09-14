@@ -11,7 +11,7 @@
         WindowStyle="ThreeDBorderWindow"
         Left="0"
         Top="0"
-        Title="{Binding Path=Title}" Height="143" Width="280">
+        Title="{Binding Path=Title}" Height="143" Width="252">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -44,21 +44,27 @@
                        VerticalAlignment="Center"
                        HorizontalAlignment="Center">
                 <TextBlock.Text>
-                    <Binding Path="ElapsedDuration" StringFormat="{}{0:hh\:mm\:ss}" />
+                    <Binding Path="ElapsedDuration" StringFormat="{}{0:mm\:ss}" />
                 </TextBlock.Text>
             </TextBlock>
             <StackPanel Orientation="Vertical"
                         VerticalAlignment="Center"
                         Margin="0.2cm 0">
-                <TextBlock Text="{Binding Path=StartedAt, StringFormat='Start: {0:hh\\:mm tt}'}"
-                           TextAlignment="Left"
+                <TextBlock TextAlignment="Left"
                            Margin="0 0.1cm"
                            VerticalAlignment="Center"
-                           HorizontalAlignment="Left" />
-                <TextBlock Text="{Binding Path=FinishedAt, StringFormat='Finish: {0:hh\\:mm tt}'}"
-                           TextAlignment="Left"
+                           HorizontalAlignment="Left">
+                    <TextBlock.Text>
+                        <Binding Path="StartedAt" StringFormat="Start: {0:hh\:mm tt}" />
+                    </TextBlock.Text>
+                </TextBlock>
+                <TextBlock TextAlignment="Left"
                            VerticalAlignment="Center"
-                           HorizontalAlignment="Left" />
+                           HorizontalAlignment="Left">
+                    <TextBlock.Text>
+                        <Binding Path="FinishedAt" StringFormat="Finish: {0:hh\:mm tt}" />
+                    </TextBlock.Text>
+                </TextBlock>
             </StackPanel>
         </StackPanel>
     </DockPanel>

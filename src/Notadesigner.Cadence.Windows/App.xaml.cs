@@ -22,7 +22,7 @@ public partial class App : Application, INotifyPropertyChanged
 
     private TimerState _timerState;
 
-    private MainWindow _mainWindow;
+    private readonly MainWindow _mainWindow;
 
     public App(IProducer<UIEvent> uiEventProducer,
             [FromKeyedServices("guiTransition")] IEventHandler<TransitionEvent> transitionHandler,
