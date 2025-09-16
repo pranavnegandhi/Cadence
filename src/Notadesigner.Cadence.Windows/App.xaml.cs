@@ -14,11 +14,15 @@ public partial class App : Application, INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler? PropertyChanged;
 
+    private int _focusCounter;
+
     private TimeSpan _elapsedDuration;
 
     private TimeSpan _totalDuration;
 
-    private int _focusCounter;
+    private DateTime _startedAt;
+
+    private DateTime _finishedAt;
 
     private TimerState _timerState;
 
@@ -42,6 +46,8 @@ public partial class App : Application, INotifyPropertyChanged
         handler.Relaxed += RelaxedEventHandler;
         handler.Stopped += StoppedEventHandler;
 
+        timerHandler.EventReceived += TimerEventReceivedHandler;
+
         _mainWindow = mainWindow;
     }
 
@@ -49,20 +55,6 @@ public partial class App : Application, INotifyPropertyChanged
     {
         _mainWindow.Show();
         base.OnStartup(e);
-    }
-
-    public TimeSpan ElapsedDuration
-    {
-        get => _elapsedDuration;
-
-        set
-        {
-            if (value != _elapsedDuration)
-            {
-                _elapsedDuration = value;
-                OnPropertyChanged();
-            }
-        }
     }
 
     public int FocusCounter
@@ -80,15 +72,15 @@ public partial class App : Application, INotifyPropertyChanged
         }
     }
 
-    public TimerState TimerState
+    public TimeSpan ElapsedDuration
     {
-        get => _timerState;
+        get => _elapsedDuration;
 
         set
         {
-            if (value != _timerState)
+            if (value != _elapsedDuration)
             {
-                _timerState = value;
+                _elapsedDuration = value;
                 OnPropertyChanged();
             }
         }
@@ -108,6 +100,52 @@ public partial class App : Application, INotifyPropertyChanged
         }
     }
 
+    public DateTime StartedAt
+    {
+        get => _startedAt;
+
+        set
+        {
+            if (_startedAt == value)
+            {
+                return;
+            }
+
+            _startedAt = value;
+            OnPropertyChanged();
+        }
+    }
+
+    public DateTime FinishedAt
+    {
+        get => _finishedAt;
+
+        set
+        {
+            if (_finishedAt == value)
+            {
+                return;
+            }
+
+            _finishedAt = value;
+            OnPropertyChanged();
+        }
+    }
+
+    public TimerState TimerState
+    {
+        get => _timerState;
+
+        set
+        {
+            if (value != _timerState)
+            {
+                _timerState = value;
+                OnPropertyChanged();
+            }
+        }
+    }
+
     private void AbandonedEventHandler(object? _, int e)
     {
         TimerState = TimerState.Abandoned;
@@ -119,6 +157,13 @@ public partial class App : Application, INotifyPropertyChanged
         TimerState = TimerState.Begin;
         FocusCounter = e;
         ElapsedDuration = TimeSpan.Zero;
+        StartedAt = DateTime.Now;
+    }
+
+    private void FocusedEventHandler(object? _, int e)
+    {
+        TimerState = TimerState.Focused;
+        FocusCounter = e;
     }
 
     private void EndEventHandler(object? _, int e)
@@ -130,17 +175,6 @@ public partial class App : Application, INotifyPropertyChanged
     private void FinishedEventHandler(object? _, int e)
     {
         TimerState = TimerState.Finished;
-        FocusCounter = e;
-    }
-
-    private void OnPropertyChanged([CallerMemberName] string propertyName = "")
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-    }
-
-    private void FocusedEventHandler(object? _, int e)
-    {
-        TimerState = TimerState.Focused;
         FocusCounter = e;
     }
 
@@ -166,5 +200,17 @@ public partial class App : Application, INotifyPropertyChanged
     {
         TimerState = TimerState.Stopped;
         FocusCounter = e;
+    }
+
+    private void TimerEventReceivedHandler(object? sender, TimerEvent @event)
+    {
+        ElapsedDuration = @event.Elapsed;
+        TotalDuration = @event.TotalDuration;
+        FinishedAt = StartedAt.Add(TotalDuration);
+    }
+
+    private void OnPropertyChanged([CallerMemberName] string propertyName = "")
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }
