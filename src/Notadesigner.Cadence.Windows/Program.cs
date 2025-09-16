@@ -14,6 +14,9 @@ namespace Notadesigner.Cadence.Windows;
 
 internal static class Program
 {
+    /// <summary>
+    ///  The main entry point for the application.
+    /// </summary>
     [STAThread]
     [SupportedOSPlatform("windows")]
     public static async Task Main(string[] args)
@@ -30,18 +33,17 @@ internal static class Program
         {
             /// Attempt to initialize the service
             Log.Information("Starting Cadence");
-
-            var host = new HostBuilder()
-                .ConfigureServices(ConfigureServicesDelegate)
+            var builder = Host.CreateDefaultBuilder(args)
                 .ConfigureWpf(builder =>
                 {
                     builder.UseApplication<App>();
                     builder.UseWindow<MainWindow>();
                 })
                 .UseWpfLifetime()
-                .UseSerilog()
-                .Build();
+                .ConfigureServices(ConfigureServicesDelegate)
+                .UseSerilog();
 
+            var host = builder.Build();
             await host.Services.StartConsumers();
 
             await host.RunAsync();
