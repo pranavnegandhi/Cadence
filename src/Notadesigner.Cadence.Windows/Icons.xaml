@@ -23,8 +23,9 @@
     <DrawingImage x:Key="Start">
         <DrawingImage.Drawing>
             <DrawingGroup ClipGeometry="M-128,-128 V128 H128 V-128 H128 Z">
-                <GeometryDrawing Brush="#ff70ed48" Geometry="M0,0.0c-3.1-1.7-6.85-1.625-9.9,0.175c-3.05,1.8-4.9,5.075-4.9,8.6v92c0,3.524,1.875,6.8,4.9,8.6
-	c3.025,1.801,6.8,1.875,9.9,0.176l84-46c3.2-1.75,5.2-5.125,5.2-8.775s-2-7.025-5.2-8.775L0,0.007z"/>
+                <GeometryDrawing Brush="#ff70ed48" Geometry="M24.143,5.315c-3.32-1.821-7.34-1.743-10.607,0.186c-3.267,1.928-5.248,5.439-5.248,9.214v98.567
+	c0,3.776,2.009,7.286,5.248,9.217c3.242,1.926,7.287,2.01,10.607,0.187l89.998-49.282c3.43-1.874,5.575-5.489,5.575-9.402
+	c0-3.909-2.146-7.528-5.575-9.403L24.143,5.32V5.315z"/>
             </DrawingGroup>
         </DrawingImage.Drawing>
     </DrawingImage>
@@ -32,9 +33,15 @@
     <DrawingImage x:Key="Interrupt">
         <DrawingImage.Drawing>
             <DrawingGroup ClipGeometry="M-128,-128 V128 H128 V-128 H128 Z">
-                <GeometryDrawing Brush="#ffffcc00" Geometry="M0,0c28.3,0,51.2-22.9,51.2-51.2S28.3-102.4,0-102.4c-28.3,0-51.2,22.9-51.2,51.2S-28.3,0,0,0z M-6.4-64v25.6
-	c0,3.5-2.9,6.4-6.4,6.4s-6.4-2.9-6.4-6.4V-64c0-3.5,2.9-6.4,6.4-6.4S-6.4-67.5-6.4-64z M19.2-64v25.6c0,3.5-2.9,6.4-6.4,6.4
-	s-6.4-2.9-6.4-6.4V-64c0-3.5,2.9-6.4,6.4-6.4S19.2-67.5,19.2-64z" />
+                <GeometryDrawing Brush="#ffedcd48">
+                    <GeometryDrawing.Geometry>
+                        <EllipseGeometry RadiusX="64" RadiusY="64" Center="64,64" />
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="#fff2f4d0" Geometry="M56,48v32c0,4.375-3.625,8-8,8s-8-3.625-8-8V48
+	c0-4.375,3.625-8,8-8S56,43.625,56,48z" />
+                <GeometryDrawing Brush="#fff2f4d0" Geometry="M88,48v32c0,4.375-3.625,8-8,8s-8-3.625-8-8V48
+	c0-4.375,3.625-8,8-8S88,43.625,88,48z" />
             </DrawingGroup>
         </DrawingImage.Drawing>
     </DrawingImage>
@@ -42,10 +49,14 @@
     <DrawingImage x:Key="Resume">
         <DrawingImage.Drawing>
             <DrawingGroup ClipGeometry="M-128,-128 V128 H128 V-128 H128 Z">
-                <GeometryDrawing Brush="#ff488bed" Geometry="M0,0c0-28.277,22.923-51.2,51.2-51.2c28.276,0,51.2,22.923,51.2,51.2c0,28.276-22.924,51.2-51.2,51.2
-	C22.923,51.2,0,28.276,0,0z M37.66-21.78c-1.521,0.84-2.46,2.46-2.46,4.18v35.2c0,1.74,0.939,3.34,2.46,4.18
-	c1.52,0.841,3.36,0.82,4.86-0.1l28.8-17.6c1.42-0.88,2.3-2.419,2.3-4.1s-0.88-3.22-2.3-4.1l-28.8-17.6c-1.48-0.9-3.34-0.94-4.86-0.1
-	V-21.78z" />
+                <GeometryDrawing Brush="#ff488bed">
+                    <GeometryDrawing.Geometry>
+                        <EllipseGeometry RadiusX="64" RadiusY="64" Center="64,64" />
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="#fff2f4d0" Geometry="M47.075,36.775C45.174,37.825,44,39.85,44,42v44
+	c0,2.175,1.174,4.175,3.075,5.225c1.9,1.052,4.2,1.025,6.075-0.125l36-22c1.774-1.1,2.874-3.023,2.874-5.125
+	c0-2.102-1.1-4.025-2.874-5.125l-36-22c-1.85-1.125-4.175-1.175-6.075-0.125V36.775z" />
             </DrawingGroup>
         </DrawingImage.Drawing>
     </DrawingImage>
@@ -60,10 +71,13 @@
 
     <DrawingImage x:Key="Abandon">
         <DrawingImage.Drawing>
-            <DrawingGroup ClipGeometry="M-128,-128 V128 H128 V-128 H128 Z">
-                <GeometryDrawing Brush="#ffed8a48" Geometry="M0,0c28.276,0,51.2-22.924,51.2-51.2c0-28.277-22.924-51.2-51.2-51.2c-28.277,0-51.2,22.923-51.2,51.2
-	C-51.2-22.923-28.277,0,0,0z M-12.8-70.4h25.6c3.54,0,6.4,2.86,6.4,6.4v25.6c0,3.54-2.86,6.4-6.4,6.4h-25.6
-	c-3.54,0-6.4-2.86-6.4-6.4V-64C-19.2-67.54-16.34-70.4-12.8-70.4z" />
+            <DrawingGroup ClipGeometry="M0,0 V128 H128 V0 H0 Z">
+                <GeometryDrawing Brush="#ffed8a48">
+                    <GeometryDrawing.Geometry>
+                        <EllipseGeometry RadiusX="64" RadiusY="64" Center="64,64" />
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="#fff2f4d0" Geometry="F1 M128,128z M0,0z M48,40L80,40C84.425,40,88,43.575,88,48L88,80C88,84.425,84.425,88,80,88L48,88C43.575,88,40,84.425,40,80L40,48C40,43.575,43.575,40,48,40z" />
             </DrawingGroup>
         </DrawingImage.Drawing>
     </DrawingImage>
@@ -71,9 +85,9 @@
     <DrawingImage x:Key="Reset">
         <DrawingImage.Drawing>
             <DrawingGroup ClipGeometry="M-128,-128 V128 H128 V-128 H128 Z">
-                <GeometryDrawing Brush="#fff2f4d0" Geometry="M0,0c-2.963-2.963-2.963-7.775,0-10.739l30.342-30.342c2.182-2.181,5.429-2.821,8.273-1.636
+                <GeometryDrawing Brush="#fff2f4d0" Geometry="M15.022,69.36c-2.963-2.963-2.963-7.775,0-10.74l30.342-30.342c2.182-2.181,5.429-2.821,8.273-1.636
 	c2.845,1.186,4.67,3.959,4.67,7.017v15.171h45.515c6.281,0,11.378,5.097,11.378,11.378v7.586c0,6.282-5.097,11.379-11.378,11.379
-	H43.286v15.17c0,3.059-1.849,5.832-4.694,7.018c-2.844,1.185-6.092,0.522-8.272-1.637L-0.023,0.024L0,0z" />
+	H58.309v15.17c0,3.06-1.85,5.832-4.694,7.019c-2.844,1.185-6.092,0.521-8.272-1.637L14.999,69.384L15.022,69.36z" />
             </DrawingGroup>
         </DrawingImage.Drawing>
     </DrawingImage>
@@ -81,11 +95,12 @@
     <DrawingImage x:Key="Exit">
         <DrawingImage.Drawing>
             <DrawingGroup ClipGeometry="M-128,-128 V128 H128 V-128 H128 Z">
-                <GeometryDrawing Brush="#ffee464a" Geometry="M0,0c-8.068,0-14.628,6.56-14.628,14.628v73.143c0,8.068,6.56,14.629,14.628,14.629h73.143
-	c8.068,0,14.629-6.561,14.629-14.629V14.628C87.772,6.56,81.212,0,73.144,0H0z M16.229,30.857c2.149-2.148,5.623-2.148,7.749,0
-	l12.571,12.572L49.12,30.857c2.149-2.148,5.624-2.148,7.75,0c2.125,2.149,2.148,5.623,0,7.749L44.298,51.177L56.87,63.748
-	c2.148,2.149,2.148,5.623,0,7.749c-2.149,2.126-5.624,2.148-7.75,0L36.549,58.926L23.978,71.497c-2.149,2.148-5.623,2.148-7.749,0
-	c-2.125-2.148-2.148-5.623,0-7.749l12.572-12.571L16.229,38.606C14.081,36.457,14.081,32.983,16.229,30.857z" />
+                <GeometryDrawing Brush="#ffee464a" Geometry="M18.285,0C8.2,0,0,8.2,0,18.285v91.429C0,119.798,8.2,128,18.285,128h91.429c10.085,0,18.286-8.202,18.286-18.286V18.285
+	C128,8.2,119.802,0,109.716,0H18.285z" />
+                <GeometryDrawing Brush="#fff2f4d0" Geometry="M38.571,38.571c2.686-2.685,7.029-2.685,9.687,0l15.713,15.715
+	l15.715-15.715c2.686-2.685,7.028-2.685,9.688,0c2.656,2.686,2.685,7.029,0,9.686L73.658,63.971l15.716,15.714
+	c2.685,2.686,2.685,7.029,0,9.687c-2.687,2.658-7.031,2.685-9.688,0L63.971,73.657L48.258,89.371c-2.687,2.685-7.029,2.685-9.687,0
+	c-2.656-2.685-2.685-7.028,0-9.687l15.715-15.714L38.571,48.257C35.886,45.571,35.886,41.229,38.571,38.571z" />
             </DrawingGroup>
         </DrawingImage.Drawing>
     </DrawingImage>

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="128px" height="128px" viewBox="-63.5 64.5 128 128" enable-background="new -63.5 64.5 128 128" xml:space="preserve">
-<path d="M0,0c28.3,0,51.2-22.9,51.2-51.2S28.3-102.4,0-102.4c-28.3,0-51.2,22.9-51.2,51.2S-28.3,0,0,0z M-6.4-64v25.6
-	c0,3.5-2.9,6.4-6.4,6.4s-6.4-2.9-6.4-6.4V-64c0-3.5,2.9-6.4,6.4-6.4S-6.4-67.5-6.4-64z M19.2-64v25.6c0,3.5-2.9,6.4-6.4,6.4
-	s-6.4-2.9-6.4-6.4V-64c0-3.5,2.9-6.4,6.4-6.4S19.2-67.5,19.2-64z"/>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="128px" height="128px" viewBox="0 0 128 128" enable-background="new 0 0 128 128" xml:space="preserve">
+<path d="M64,128c35.375,0,64-28.625,64-64S99.375,0,64,0C28.625,0,0,28.625,0,64S28.625,128,64,128z"/>
+<path fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" d="M56,48v32c0,4.375-3.625,8-8,8s-8-3.625-8-8V48
+	c0-4.375,3.625-8,8-8S56,43.625,56,48z"/>
+<path fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" d="M88,48v32c0,4.375-3.625,8-8,8s-8-3.625-8-8V48
+	c0-4.375,3.625-8,8-8S88,43.625,88,48z"/>
 </svg>
