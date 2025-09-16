@@ -59,6 +59,9 @@
 	  <None Update="appsettings.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
+	  <None Update="program.db">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
 	  <None Update="Properties\GuiRunnerSettings.settings">
 	    <LastGenOutput>GuiRunnerSettings.Designer.cs</LastGenOutput>
 	    <Generator>SettingsSingleFileGenerator</Generator>
