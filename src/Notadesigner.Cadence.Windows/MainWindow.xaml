@@ -23,7 +23,7 @@
         <TaskbarItemInfo ProgressState="Normal" ProgressValue="{Binding Path=TimeElapsed}">
             <TaskbarItemInfo.ThumbButtonInfos>
                 <ThumbButtonInfoCollection>
-                    <ThumbButtonInfo ImageSource="{StaticResource Start}" Description="Start" />
+                    <ThumbButtonInfo ImageSource="{StaticResource Start}" Description="Start" Command="{Binding Path=StartCommand}" />
                     <ThumbButtonInfo ImageSource="{StaticResource Interrupt}" Description="Interrupt" />
                     <ThumbButtonInfo ImageSource="{StaticResource Resume}" Description="Resume" />
                     <ThumbButtonInfo ImageSource="{StaticResource Abandon}" Description="Abandon" />

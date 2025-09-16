@@ -1,6 +1,10 @@
-﻿using Notadesigner.Cadence.Windows.Properties;
+﻿using Notadesigner.Approximato.Core;
+using Notadesigner.Approximato.Messaging.Contracts;
+using Notadesigner.Cadence.Windows.Commands;
+using Notadesigner.Cadence.Windows.Properties;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Input;
 
 namespace Notadesigner.Cadence.Windows;
 
@@ -14,13 +18,18 @@ public class MainWindowViewModel : INotifyPropertyChanged
 
     private TimeSpan _totalDuration;
 
-    private double _timeElapsed;
-
     private DateTime _startedAt;
 
     private DateTime _finishedAt;
 
     public string Title { get; init; } = GuiRunnerResources.ProductName;
+
+    public ICommand StartCommand { get; private set; }
+
+    public MainWindowViewModel(IProducer<UIEvent> uiEventProducer)
+    {
+        StartCommand = new StartCommand(uiEventProducer);
+    }
 
     public int FocusCounter
     {
