@@ -2,6 +2,7 @@
 using Notadesigner.Approximato.Core;
 using Notadesigner.Approximato.Messaging.Contracts;
 using Notadesigner.Cadence.Windows.Commands;
+using Notadesigner.Cadence.Windows.Properties;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
@@ -51,9 +52,32 @@ public partial class App : Application, INotifyPropertyChanged
         timerHandler.EventReceived += TimerEventReceivedHandler;
 
         StartCommand = new StartCommand(uiEventProducer);
+        InterruptCommand = new InterruptCommand(uiEventProducer);
+        ResumeCommand = new ResumeCommand(uiEventProducer);
+        AbandonCommand = new AbandonCommand(uiEventProducer);
+        ResetCommand = new ResetCommand(uiEventProducer);
+        ExitCommand = new ExitCommand(ExecuteExit, CanExit);
 
         _mainWindow = mainWindow;
         _mainWindow.DataContext = this;
+        TimerState = TimerState.Begin;
+    }
+
+    private static bool CanExit(object? parameter) => true;
+
+    private void ExecuteExit(object? parameter)
+    {
+        var result = MessageBoxResult.Yes;
+
+        if (TimerState != TimerState.Begin)
+        {
+            result = MessageBox.Show("Halt Pomodoro and exit?", GuiRunnerResources.ProductName, MessageBoxButton.YesNo, MessageBoxImage.Question);
+        }
+
+        if (result == MessageBoxResult.Yes)
+        {
+            Current.Shutdown();
+        }
     }
 
     protected override void OnStartup(StartupEventArgs e)
@@ -63,6 +87,16 @@ public partial class App : Application, INotifyPropertyChanged
     }
 
     public ICommand StartCommand { get; private set; }
+
+    public ICommand InterruptCommand { get; private set; }
+
+    public ICommand ResumeCommand { get; private set; }
+
+    public ICommand AbandonCommand { get; private set; }
+
+    public ICommand ResetCommand { get; private set; }
+
+    public ICommand ExitCommand { get; private set; }
 
     public int FocusCounter
     {

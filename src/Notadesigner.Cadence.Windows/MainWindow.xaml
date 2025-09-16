@@ -24,11 +24,11 @@
             <TaskbarItemInfo.ThumbButtonInfos>
                 <ThumbButtonInfoCollection>
                     <ThumbButtonInfo ImageSource="{StaticResource Start}" Description="Start" Command="{Binding Path=StartCommand}" />
-                    <ThumbButtonInfo ImageSource="{StaticResource Interrupt}" Description="Interrupt" />
-                    <ThumbButtonInfo ImageSource="{StaticResource Resume}" Description="Resume" />
-                    <ThumbButtonInfo ImageSource="{StaticResource Abandon}" Description="Abandon" />
-                    <ThumbButtonInfo ImageSource="{StaticResource Reset}" Description="Reset" />
-                    <ThumbButtonInfo ImageSource="{StaticResource Exit}" Description="Exit" />
+                    <ThumbButtonInfo ImageSource="{StaticResource Interrupt}" Description="Interrupt" Command="{Binding Path=InterruptCommand}" />
+                    <ThumbButtonInfo ImageSource="{StaticResource Resume}" Description="Resume" Command="{Binding Path=ResumeCommand}" />
+                    <ThumbButtonInfo ImageSource="{StaticResource Abandon}" Description="Abandon" Command="{Binding Path=AbandonCommand}" />
+                    <ThumbButtonInfo ImageSource="{StaticResource Reset}" Description="Reset" Command="{Binding Path=ResetCommand}" />
+                    <ThumbButtonInfo ImageSource="{StaticResource Exit}" Description="Exit" Command="{Binding Path=ExitCommand}" />
                 </ThumbButtonInfoCollection>
             </TaskbarItemInfo.ThumbButtonInfos>
         </TaskbarItemInfo>
