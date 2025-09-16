@@ -71,8 +71,7 @@ internal static class Program
             appSettings.LongBreakDuration,
             appSettings.LenientMode);
 
-        collection.AddSingleton(settingsFactory)
-            .AddTransient<MainWindowViewModel>();
+        collection.AddSingleton(settingsFactory);
 
         collection.CreateEvent<UIEvent>()
             .AddEventHandler<UIEvent, StateHost>()

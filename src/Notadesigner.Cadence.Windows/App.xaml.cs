@@ -1,9 +1,11 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Notadesigner.Approximato.Core;
 using Notadesigner.Approximato.Messaging.Contracts;
+using Notadesigner.Cadence.Windows.Commands;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
+using System.Windows.Input;
 
 namespace Notadesigner.Cadence.Windows;
 
@@ -48,7 +50,10 @@ public partial class App : Application, INotifyPropertyChanged
 
         timerHandler.EventReceived += TimerEventReceivedHandler;
 
+        StartCommand = new StartCommand(uiEventProducer);
+
         _mainWindow = mainWindow;
+        _mainWindow.DataContext = this;
     }
 
     protected override void OnStartup(StartupEventArgs e)
@@ -56,6 +61,8 @@ public partial class App : Application, INotifyPropertyChanged
         _mainWindow.Show();
         base.OnStartup(e);
     }
+
+    public ICommand StartCommand { get; private set; }
 
     public int FocusCounter
     {
